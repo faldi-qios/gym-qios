@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -40,7 +41,8 @@ class HomePage extends StatelessWidget {
                 height: 10,
               ),
               ElevatedButton(
-                onPressed: () {}, //This go to enroll premium class
+                onPressed: () =>
+                    context.go("/enroll"), //This go to enroll premium class
                 style: ElevatedButton.styleFrom(
                   shape: const StadiumBorder(),
                   backgroundColor: Theme.of(context).primaryColor,
