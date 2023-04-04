@@ -88,6 +88,9 @@ class GymClassProvider extends ChangeNotifier {
   ];
 
   get classes => _classes;
+
+  detailClass(id) =>
+      _classes.firstWhere((element) => element.id.toString() == id.toString());
 }
 
 const dummyText =

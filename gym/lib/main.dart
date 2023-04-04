@@ -5,6 +5,7 @@ import 'package:gym/models/GymClass.dart';
 import 'package:gym/providers/gym_class_provider.dart';
 import 'package:gym/screens/homepage.dart';
 import 'package:provider/provider.dart';
+import 'screens/detailpage.dart';
 import 'screens/enrollpage.dart';
 
 void main() {
@@ -30,10 +31,19 @@ class MyApp extends StatelessWidget {
             //   builder: (context, state) => PaymmentPage(),
             // ),
             GoRoute(
-                name: "class",
-                path: "class",
-                builder: (context, state) => EnrollPage(),
-                routes: [])
+              name: "class",
+              path: "class",
+              builder: (context, state) => EnrollPage(),
+              routes: [
+                GoRoute(
+                  name: "detail",
+                  path: ":id",
+                  builder: (context, state) => DetailPage(
+                      // id: int.parse(state.params["id"] as String),
+                      id: state.params["id"]!),
+                )
+              ],
+            )
           ],
         ),
       ],

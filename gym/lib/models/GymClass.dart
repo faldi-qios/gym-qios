@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 class GymClass {
   final String title, image, description, price;
-  final int duration, id;
+  final int id;
+  final double duration;
 
   GymClass({
     required this.id,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:gym/models/GymClass.dart';
 import 'package:gym/providers/gym_class_provider.dart';
 import 'package:gym/widgets/categories_widget.dart';
@@ -78,13 +79,16 @@ class _EnrollPageState extends State<EnrollPage> {
                     // padding: const EdgeInsets.all(12),
                     itemBuilder: (context, index) {
                       return ClassTile(
-                        title: value.classes[index].title,
-                        price: value.classes[index].price,
-                        image: value.classes[index].image,
-                        description: value.classes[index].description,
-                        // duration: value.classes[index].duration,
-                        onPressed: () {},
-                      );
+                          title: value.classes[index].title,
+                          price: value.classes[index].price,
+                          image: value.classes[index].image,
+                          description: value.classes[index].description,
+                          duration: value.classes[index].duration,
+                          onPressed: () {
+                            var id = value.classes[index].id;
+
+                            context.go("/class/$id");
+                          });
                     },
                   );
                 },

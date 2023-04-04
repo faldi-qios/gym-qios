@@ -47,7 +47,7 @@ class HomePage extends StatelessWidget {
                   foregroundColor: Colors.white,
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(
+                  padding: EdgeInsets.symmetric(
                     horizontal: 15.0,
                   ),
                   child: Text('Enroll Premium Class',

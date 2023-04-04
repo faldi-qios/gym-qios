@@ -3,7 +3,7 @@ import 'package:go_router/go_router.dart';
 
 class ClassTile extends StatelessWidget {
   final String title, image, description, price;
-  // final int duration;
+  final double duration;
   void Function()? onPressed;
 
   ClassTile({
@@ -12,14 +12,14 @@ class ClassTile extends StatelessWidget {
     required this.image,
     required this.description,
     required this.price,
-    // required this.duration,
+    required this.duration,
     required this.onPressed,
   });
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      // onTap: () => selectMeal(context),
+      onTap: onPressed,
       child: Card(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(30),
@@ -32,7 +32,7 @@ class ClassTile extends StatelessWidget {
             Stack(
               children: [
                 ClipRRect(
-                  borderRadius: BorderRadius.only(
+                  borderRadius: const BorderRadius.only(
                     topLeft: Radius.circular(30),
                     topRight: Radius.circular(30),
                   ),
@@ -46,7 +46,7 @@ class ClassTile extends StatelessWidget {
               ],
             ),
             Padding(
-              padding: EdgeInsets.all(20),
+              padding: const EdgeInsets.all(20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -60,7 +60,7 @@ class ClassTile extends StatelessWidget {
                     ),
                   ),
                   ElevatedButton(
-                    onPressed: () => {}, //This go to enroll premium class
+                    onPressed: onPressed, //This go to enroll premium class
                     style: ElevatedButton.styleFrom(
                       shape: const StadiumBorder(),
                       backgroundColor: Theme.of(context).primaryColor,
