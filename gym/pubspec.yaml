@@ -78,7 +78,7 @@ flutter:
   fonts:
     - family: Gordita
       fonts:
-        - asset: fonts/Gordita-Regular.otf
+        - asset: assets/fonts/Gordita-Regular.otf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro

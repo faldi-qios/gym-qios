@@ -1,8 +1,9 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:gym/providers/gym_class_provider.dart';
 import 'package:provider/provider.dart';
+
+import '../widgets/date_picker.dart';
+import '../widgets/dropdown_menu.dart';
 
 class DetailPage extends StatelessWidget {
   final String id;
@@ -68,6 +69,14 @@ class DetailPage extends StatelessWidget {
                       "Class Duration",
                       style: Theme.of(context).textTheme.displayLarge,
                     ),
+                    Text(
+                      data.duration.toString(),
+                      style: Theme.of(context).textTheme.headlineSmall,
+                    ),
+                    DropDownMenu(),
+                    SizedBox(height: 20),
+                    Text("Select Date"),
+                    DatePicker(),
                   ],
                 ),
               );
