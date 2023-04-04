@@ -30,10 +30,10 @@ class MyApp extends StatelessWidget {
             //   builder: (context, state) => PaymmentPage(),
             // ),
             GoRoute(
-              name: "enroll",
-              path: "enroll",
-              builder: (context, state) => EnrollPage(),
-            )
+                name: "class",
+                path: "class",
+                builder: (context, state) => EnrollPage(),
+                routes: [])
           ],
         ),
       ],
@@ -49,7 +49,7 @@ class MyApp extends StatelessWidget {
           primaryColor: Color(0xFF1CAAC9),
           textTheme: TextTheme(
             displayLarge: GoogleFonts.dmSans(
-              fontSize: 57,
+              fontSize: 48,
               fontWeight: FontWeight.w700,
               color: Colors.black,
             ),
@@ -64,20 +64,20 @@ class MyApp extends StatelessWidget {
               color: Colors.black,
             ),
             headlineLarge: GoogleFonts.dmSans(
-              fontSize: 32,
-              fontWeight: FontWeight.w700,
-              color: Colors.black,
-            ),
+                fontSize: 34,
+                fontWeight: FontWeight.w500,
+                color: Colors.white,
+                letterSpacing: 0.69),
             headlineMedium: GoogleFonts.dmSans(
               fontSize: 28,
               fontWeight: FontWeight.w700,
               color: Colors.black,
             ),
             headlineSmall: GoogleFonts.dmSans(
-              fontSize: 24,
-              fontWeight: FontWeight.w700,
-              color: Colors.black,
-            ),
+                fontSize: 24,
+                fontWeight: FontWeight.w700,
+                color: Colors.black,
+                letterSpacing: 0.75),
             titleLarge: GoogleFonts.dmSans(
               fontSize: 22,
               fontWeight: FontWeight.w700,
@@ -91,7 +91,7 @@ class MyApp extends StatelessWidget {
             ),
             titleSmall: GoogleFonts.dmSans(
               fontSize: 14,
-              fontWeight: FontWeight.w700,
+              fontWeight: FontWeight.w500,
               letterSpacing: 0.1,
               color: Colors.black,
             ),

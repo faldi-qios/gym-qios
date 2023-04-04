@@ -25,15 +25,13 @@ class HomePage extends StatelessWidget {
                   backgroundColor: Theme.of(context).primaryColor,
                   foregroundColor: Colors.white,
                 ),
-                child: const Padding(
-                  padding: EdgeInsets.symmetric(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
                     horizontal: 20.0,
                   ),
                   child: Text(
                     'Bayar Membership',
-                    style: TextStyle(
-                      fontSize: 24,
-                    ),
+                    style: Theme.of(context).textTheme.headlineLarge,
                   ),
                 ),
               ),
@@ -42,22 +40,18 @@ class HomePage extends StatelessWidget {
               ),
               ElevatedButton(
                 onPressed: () =>
-                    context.go("/enroll"), //This go to enroll premium class
+                    context.go("/class"), //This go to enroll premium class
                 style: ElevatedButton.styleFrom(
                   shape: const StadiumBorder(),
                   backgroundColor: Theme.of(context).primaryColor,
                   foregroundColor: Colors.white,
                 ),
-                child: const Padding(
-                  padding: EdgeInsets.symmetric(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
                     horizontal: 15.0,
                   ),
-                  child: Text(
-                    'Enroll Premium Class',
-                    style: TextStyle(
-                      fontSize: 24,
-                    ),
-                  ),
+                  child: Text('Enroll Premium Class',
+                      style: Theme.of(context).textTheme.headlineLarge),
                 ),
               ),
             ],

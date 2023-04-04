@@ -19,17 +19,17 @@ class _EnrollPageState extends State<EnrollPage> {
     return Scaffold(
         body: SafeArea(
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20.0),
+        padding: const EdgeInsets.symmetric(horizontal: 48.0),
         child: Column(
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text("Enroll Premium Class",
-                    style: Theme.of(context).textTheme.headlineSmall),
+                    style: Theme.of(context).textTheme.displayLarge),
                 const Icon(
                   Icons.shopping_cart,
-                  size: 20,
+                  size: 26,
                   color: Colors.black54,
                 ),
               ],
@@ -40,15 +40,16 @@ class _EnrollPageState extends State<EnrollPage> {
             TextField(
               decoration: InputDecoration(
                   hintText: 'Search',
-                  prefixIcon: Icon(Icons.search),
+                  hintStyle: Theme.of(context).textTheme.headlineSmall,
+                  suffixIcon: const Icon(Icons.search),
                   contentPadding: const EdgeInsets.all(15),
                   border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(30))),
+                      borderRadius: BorderRadius.circular(48))),
               onChanged: (value) {
                 // SEARCH INPUT GOES HERE
               },
             ),
-            SizedBox(
+            Container(
               height: 25,
               child: Consumer<GymClassProvider>(
                 builder: (context, value, child) {
@@ -71,10 +72,10 @@ class _EnrollPageState extends State<EnrollPage> {
                     gridDelegate:
                         const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
-                      childAspectRatio: 1 / 1.2,
+                      // childAspectRatio: 1.2,
                     ),
                     itemCount: value.classes.length,
-                    padding: const EdgeInsets.all(12),
+                    // padding: const EdgeInsets.all(12),
                     itemBuilder: (context, index) {
                       return ClassTile(
                         title: value.classes[index].title,
