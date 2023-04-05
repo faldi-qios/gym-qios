@@ -20,7 +20,11 @@ class _EnrollPageState extends State<EnrollPage> {
     return Scaffold(
         body: SafeArea(
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 48.0),
+        padding: const EdgeInsets.only(
+          left: 48.0,
+          right: 48.0,
+          top: 30,
+        ),
         child: Column(
           children: [
             Row(
@@ -30,7 +34,7 @@ class _EnrollPageState extends State<EnrollPage> {
                     style: Theme.of(context).textTheme.displayLarge),
                 const Icon(
                   Icons.shopping_cart,
-                  size: 26,
+                  size: 27,
                   color: Colors.black54,
                 ),
               ],
@@ -41,28 +45,36 @@ class _EnrollPageState extends State<EnrollPage> {
             TextField(
               decoration: InputDecoration(
                   hintText: 'Search',
-                  hintStyle: Theme.of(context).textTheme.headlineSmall,
+                  hintStyle: const TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.w400,
+                    letterSpacing: 0.75,
+                    color: Color(0XFF49454F),
+                  ),
                   suffixIcon: const Icon(Icons.search),
-                  contentPadding: const EdgeInsets.all(15),
+                  contentPadding: const EdgeInsets.symmetric(
+                    horizontal: 30,
+                    vertical: 24,
+                  ),
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(48))),
               onChanged: (value) {
                 // SEARCH INPUT GOES HERE
               },
             ),
-            Container(
-              height: 25,
-              child: Consumer<GymClassProvider>(
-                builder: (context, value, child) {
-                  return ListView.builder(
-                    itemBuilder: (context, index) =>
-                        CategoriesWidget(value.categories[index]),
-                    itemCount: value.categories.length,
-                    scrollDirection: Axis.horizontal,
-                  );
-                },
-              ),
-            ),
+            // Container(
+            //   // height: 25,
+            //   child: Consumer<GymClassProvider>(
+            //     builder: (context, value, child) {
+            //       return ListView.builder(
+            //         itemBuilder: (context, index) =>
+            //             CategoriesWidget(value.categories[index]),
+            //         itemCount: value.categories.length,
+            //         scrollDirection: Axis.horizontal,
+            //       );
+            //     },
+            //   ),
+            // ),
             const SizedBox(
               height: 20,
             ),
@@ -73,7 +85,7 @@ class _EnrollPageState extends State<EnrollPage> {
                     gridDelegate:
                         const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
-                      // childAspectRatio: 1.2,
+                      // childAspectRatio: 1,
                     ),
                     itemCount: value.classes.length,
                     // padding: const EdgeInsets.all(12),

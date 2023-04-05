@@ -23,7 +23,8 @@ class MyApp extends StatelessWidget {
         GoRoute(
           name: "home",
           path: "/",
-          builder: (context, state) => const HomePage(),
+          builder: (context, state) =>
+              const HomePage(), //change it to homepage later
           routes: [
             // GoRoute(
             //   name: "payment",
@@ -50,7 +51,11 @@ class MyApp extends StatelessWidget {
     );
 
     return MultiProvider(
-      providers: [ChangeNotifierProvider.value(value: GymClassProvider())],
+      providers: [
+        ChangeNotifierProvider.value(
+          value: GymClassProvider(),
+        ),
+      ],
       child: MaterialApp.router(
         routerConfig: _router,
         title: 'Qios Gym',
@@ -61,7 +66,7 @@ class MyApp extends StatelessWidget {
             displayLarge: GoogleFonts.dmSans(
               fontSize: 48,
               fontWeight: FontWeight.w700,
-              color: Colors.black,
+              color: const Color(0XFF221F20),
             ),
             displayMedium: GoogleFonts.dmSans(
               fontSize: 45,
@@ -79,15 +84,16 @@ class MyApp extends StatelessWidget {
                 color: Colors.white,
                 letterSpacing: 0.69),
             headlineMedium: GoogleFonts.dmSans(
-              fontSize: 28,
-              fontWeight: FontWeight.w700,
-              color: Colors.black,
-            ),
+                fontSize: 32,
+                fontWeight: FontWeight.w500,
+                color: const Color(0XFF221F20),
+                letterSpacing: 0.39),
             headlineSmall: GoogleFonts.dmSans(
-                fontSize: 24,
-                fontWeight: FontWeight.w700,
-                color: Colors.black,
-                letterSpacing: 0.75),
+              fontSize: 24,
+              fontWeight: FontWeight.w700,
+              letterSpacing: 0.12,
+              color: Colors.black87,
+            ),
             titleLarge: GoogleFonts.dmSans(
               fontSize: 22,
               fontWeight: FontWeight.w700,

@@ -22,10 +22,10 @@ class ClassTile extends StatelessWidget {
       onTap: onPressed,
       child: Card(
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(30),
+          borderRadius: BorderRadius.circular(15),
         ),
-        elevation: 7,
-        margin: EdgeInsets.all(20),
+        elevation: 5,
+        margin: const EdgeInsets.all(20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -33,8 +33,8 @@ class ClassTile extends StatelessWidget {
               children: [
                 ClipRRect(
                   borderRadius: const BorderRadius.only(
-                    topLeft: Radius.circular(30),
-                    topRight: Radius.circular(30),
+                    topLeft: Radius.circular(15),
+                    topRight: Radius.circular(15),
                   ),
                   child: Image.network(
                     image,
@@ -46,13 +46,13 @@ class ClassTile extends StatelessWidget {
               ],
             ),
             Padding(
-              padding: const EdgeInsets.all(20),
+              padding: const EdgeInsets.only(right: 10),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Expanded(
                     child: Container(
-                      margin: EdgeInsets.only(right: 30),
+                      margin: const EdgeInsets.all(15),
                       child: Text(
                         title,
                         style: Theme.of(context).textTheme.headlineSmall,
@@ -68,14 +68,14 @@ class ClassTile extends StatelessWidget {
                     ),
                     child: const Padding(
                       padding: EdgeInsets.symmetric(
-                        horizontal: 15.0,
+                        horizontal: 5.0,
                       ),
                       child: Text(
                         'Order',
                         style: TextStyle(
-                          fontWeight: FontWeight.w700,
-                          fontSize: 24,
-                          letterSpacing: 0.12,
+                          fontWeight: FontWeight.w500,
+                          fontSize: 14,
+                          letterSpacing: 0.1,
                           color: Colors.white,
                         ),
                       ),
@@ -85,18 +85,23 @@ class ClassTile extends StatelessWidget {
               ),
             ),
             const Padding(
-              padding: EdgeInsets.all(20.0),
+              padding: EdgeInsets.only(
+                left: 15,
+                top: 5,
+                bottom: 5,
+              ),
               child: Text(
                 "Starting from",
                 style: TextStyle(
                   fontFamily: 'Gordita',
                   fontSize: 14,
                   fontWeight: FontWeight.w400,
+                  color: Colors.black54,
                 ),
               ),
             ),
             Padding(
-              padding: EdgeInsets.all(20.0),
+              padding: EdgeInsets.all(15.0),
               child: Text(
                 price,
                 style: TextStyle(

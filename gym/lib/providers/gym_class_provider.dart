@@ -19,7 +19,7 @@ class GymClassProvider extends ChangeNotifier {
       image:
           "https://static.honestdocs.id/system/blog_articles/main_hero_images/000/003/926/original/iStock-846236570_%281%29.jpg",
       description: dummyText,
-      price: "500000",
+      price: "Rp. 500.000,00",
       duration: 120,
     ),
     GymClass(
@@ -28,7 +28,7 @@ class GymClassProvider extends ChangeNotifier {
       image:
           "https://static.honestdocs.id/system/blog_articles/main_hero_images/000/003/926/original/iStock-846236570_%281%29.jpg",
       description: dummyText,
-      price: "500000",
+      price: "Rp. 500.000,00",
       duration: 120,
     ),
     GymClass(
@@ -37,7 +37,7 @@ class GymClassProvider extends ChangeNotifier {
       image:
           "https://static.honestdocs.id/system/blog_articles/main_hero_images/000/003/926/original/iStock-846236570_%281%29.jpg",
       description: dummyText,
-      price: "500000",
+      price: "Rp. 500.000,00",
       duration: 120,
     ),
     GymClass(
@@ -46,7 +46,7 @@ class GymClassProvider extends ChangeNotifier {
       image:
           "https://static.honestdocs.id/system/blog_articles/main_hero_images/000/003/926/original/iStock-846236570_%281%29.jpg",
       description: dummyText,
-      price: "500000",
+      price: "Rp. 500.000,00",
       duration: 120,
     ),
     GymClass(
@@ -55,7 +55,7 @@ class GymClassProvider extends ChangeNotifier {
       image:
           "https://static.honestdocs.id/system/blog_articles/main_hero_images/000/003/926/original/iStock-846236570_%281%29.jpg",
       description: dummyText,
-      price: "500000",
+      price: "Rp. 500.000,00",
       duration: 120,
     ),
     GymClass(
@@ -64,7 +64,7 @@ class GymClassProvider extends ChangeNotifier {
       image:
           "https://static.honestdocs.id/system/blog_articles/main_hero_images/000/003/926/original/iStock-846236570_%281%29.jpg",
       description: dummyText,
-      price: "500000",
+      price: "Rp. 500.000,00",
       duration: 120,
     ),
     GymClass(
@@ -73,7 +73,7 @@ class GymClassProvider extends ChangeNotifier {
       image:
           "https://static.honestdocs.id/system/blog_articles/main_hero_images/000/003/926/original/iStock-846236570_%281%29.jpg",
       description: dummyText,
-      price: "500000",
+      price: "Rp. 500.000,00",
       duration: 120,
     ),
     GymClass(
@@ -82,7 +82,7 @@ class GymClassProvider extends ChangeNotifier {
       image:
           "https://static.honestdocs.id/system/blog_articles/main_hero_images/000/003/926/original/iStock-846236570_%281%29.jpg",
       description: dummyText,
-      price: "500000",
+      price: "Rp. 500.000,00",
       duration: 120,
     ),
   ];
