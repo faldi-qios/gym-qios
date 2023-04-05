@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:gym/providers/gym_class_provider.dart';
+import 'package:gym/widgets/time_picker.dart';
 import 'package:provider/provider.dart';
 
 import '../widgets/date_picker.dart';
@@ -34,26 +36,27 @@ class DetailPage extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    //? For the image
                     ClipRRect(
                       borderRadius: BorderRadius.circular(23),
                       child: Image.network(
                         data.image,
-                        // width: 720,
-                        // height: 420,
                       ),
                     ),
                     const SizedBox(height: 40),
+                    //? For the title
                     Text(
                       data.title,
-                      style: const TextStyle(
+                      style: GoogleFonts.dmSans(
                         fontSize: 40,
                         fontWeight: FontWeight.w700,
-                        color: Color(0XFF221F20),
+                        color: const Color(0XFF221F20),
                       ),
                     ),
                     const SizedBox(
                       height: 28,
                     ),
+                    //? Price
                     const Text(
                       "Starting from",
                       style: TextStyle(
@@ -64,6 +67,7 @@ class DetailPage extends StatelessWidget {
                         color: Colors.black54,
                       ),
                     ),
+                    //? For the price
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 8),
                       child: Text(
@@ -76,6 +80,7 @@ class DetailPage extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 36),
+                    //? For the description
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -99,6 +104,7 @@ class DetailPage extends StatelessWidget {
                     const SizedBox(
                       height: 40,
                     ),
+                    //? For the duration
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -132,12 +138,44 @@ class DetailPage extends StatelessWidget {
                             color: Color(0XFF221F20),
                           ),
                         ),
+                        //? Dropdown Menu
                         DropDownMenu(),
                       ],
                     ),
-                    const SizedBox(height: 20),
-                    const Text("Select Date"),
-                    const DatePicker(),
+                    const SizedBox(height: 40),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: const [
+                        Text(
+                          "Select Date",
+                          style: TextStyle(
+                            fontSize: 24,
+                            fontWeight: FontWeight.w500,
+                            letterSpacing: 0.25,
+                            color: Color(0XFF221F20),
+                          ),
+                        ),
+                        //? Pick a Date
+                        DatePick(),
+                      ],
+                    ),
+                    const SizedBox(height: 30),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: const [
+                        Text(
+                          "Select Time",
+                          style: TextStyle(
+                            fontSize: 24,
+                            fontWeight: FontWeight.w500,
+                            letterSpacing: 0.25,
+                            color: Color(0XFF221F20),
+                          ),
+                        ),
+                        //? Pick Time
+                        TimePick(),
+                      ],
+                    ),
                   ],
                 ),
               );

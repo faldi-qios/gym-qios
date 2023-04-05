@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
           name: "home",
           path: "/",
           builder: (context, state) =>
-              const HomePage(), //change it to homepage later
+              const DetailPage(id: "5"), //change it to homepage later
           routes: [
             // GoRoute(
             //   name: "payment",
