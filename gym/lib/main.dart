@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
           name: "home",
           path: "/",
           builder: (context, state) =>
-              const HomePage(), //change it to homepage later
+              const MemberSummaryScreen(), //change it to homepage later
           routes: [
             GoRoute(
               name: "membership",
@@ -72,10 +72,10 @@ class MyApp extends StatelessWidget {
           primaryColor: Color(0xFF1CAAC9),
           textTheme: TextTheme(
             displayLarge: GoogleFonts.dmSans(
-              fontSize: 48,
-              fontWeight: FontWeight.w700,
-              color: const Color(0XFF221F20),
-            ),
+                fontSize: 48,
+                fontWeight: FontWeight.w700,
+                color: const Color(0XFF221F20),
+                sp),
             displayMedium: GoogleFonts.dmSans(
               fontSize: 45,
               fontWeight: FontWeight.w700,

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:gym/widgets/subscription_select.dart';
+import 'package:gym/widgets/summary_info.dart';
 
 class MemberSummaryScreen extends StatelessWidget {
   const MemberSummaryScreen({super.key});
@@ -21,52 +23,18 @@ class MemberSummaryScreen extends StatelessWidget {
                     style:
                         Theme.of(context).textTheme.displayLarge!.copyWith()),
               ),
-              Card(
-                elevation: 5,
-                child: Container(
-                  padding: EdgeInsets.all(10),
-                  margin: EdgeInsets.all(10),
-                  // decoration: ,
-                  child: Row(
-                    children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            "Full Name",
-                            style: Theme.of(context)
-                                .textTheme
-                                .headlineSmall!
-                                .copyWith(fontWeight: FontWeight.w700),
-                          ),
-                          Text(
-                            "Gender",
-                            style: Theme.of(context)
-                                .textTheme
-                                .headlineSmall!
-                                .copyWith(fontWeight: FontWeight.w700),
-                          ),
-                          Text("Mobile Phone"),
-                          Text("Tanggal Lahir"),
-                          Text("Jenis Member"),
-                          Text("Joined Date")
-                        ],
-                      ),
-                      const SizedBox(width: 30),
-                      Column(
-                        children: [
-                          Text("Jane Doe"),
-                          Text("Perempuan"),
-                          Text("08782909976"),
-                          Text("23-03-1993"),
-                          Text("Gold"),
-                          Text("15-04-2022"),
-                        ],
-                      )
-                    ],
-                  ),
-                ),
-              )
+              const SizedBox(
+                height: 30,
+              ),
+
+              //! The card for customer summary
+              SummaryInfo(),
+
+              SizedBox(
+                height: 50,
+              ),
+
+              SubscriptionSelect(),
             ],
           ),
         ),
