@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:gym/models/GymClass.dart';
 import 'package:gym/providers/gym_class_provider.dart';
+import 'package:gym/screens/extend_page.dart';
 import 'package:gym/screens/homepage.dart';
 import 'package:provider/provider.dart';
 import 'screens/detailpage.dart';
@@ -24,13 +25,13 @@ class MyApp extends StatelessWidget {
           name: "home",
           path: "/",
           builder: (context, state) =>
-              const DetailPage(id: "5"), //change it to homepage later
+              const ExtendPage(), //change it to homepage later
           routes: [
-            // GoRoute(
-            //   name: "payment",
-            //   path: "payment",
-            //   builder: (context, state) => PaymmentPage(),
-            // ),
+            GoRoute(
+              name: "membership",
+              path: "membership",
+              builder: (context, state) => ExtendPage(),
+            ),
             GoRoute(
               name: "class",
               path: "class",
