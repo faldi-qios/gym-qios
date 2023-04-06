@@ -5,6 +5,7 @@ import 'package:gym/models/GymClass.dart';
 import 'package:gym/providers/gym_class_provider.dart';
 import 'package:gym/screens/extend_page.dart';
 import 'package:gym/screens/homepage.dart';
+import 'package:gym/screens/member_summary_screen.dart';
 import 'package:provider/provider.dart';
 import 'screens/detailpage.dart';
 import 'screens/enrollpage.dart';
@@ -25,12 +26,18 @@ class MyApp extends StatelessWidget {
           name: "home",
           path: "/",
           builder: (context, state) =>
-              const ExtendPage(), //change it to homepage later
+              const HomePage(), //change it to homepage later
           routes: [
             GoRoute(
               name: "membership",
               path: "membership",
               builder: (context, state) => ExtendPage(),
+              routes: [
+                GoRoute(
+                    name: "summary",
+                    path: "summary",
+                    builder: (context, state) => MemberSummaryScreen())
+              ],
             ),
             GoRoute(
               name: "class",
@@ -91,9 +98,9 @@ class MyApp extends StatelessWidget {
                 letterSpacing: 0.39),
             headlineSmall: GoogleFonts.dmSans(
               fontSize: 24,
-              fontWeight: FontWeight.w700,
+              // fontWeight: FontWeight.w700,
               letterSpacing: 0.12,
-              color: Colors.black87,
+              color: const Color(0XFF221f20),
             ),
             titleLarge: GoogleFonts.dmSans(
               fontSize: 22,

@@ -253,14 +253,15 @@ class ExtendForm extends StatelessWidget {
                   width: double.infinity,
                   child: ElevatedButton(
                     onPressed: () {
-                      if (_formKey.currentState!.validate()) {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(
-                            content: Text(
-                                "This should replaced by route to the payment/confirmation page"),
-                          ),
-                        );
-                      }
+                      // if (_formKey.currentState!.validate()) {
+                      //   ScaffoldMessenger.of(context).showSnackBar(
+                      //     const SnackBar(
+                      //       content: Text(
+                      //           "This should replaced by route to the payment/confirmation page"),
+                      //     ),
+                      //   );
+                      // }
+                      context.go("/membership/summary");
                     }, //This go to membership payment
                     style: ElevatedButton.styleFrom(
                       shape: const StadiumBorder(),
