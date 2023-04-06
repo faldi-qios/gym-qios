@@ -20,7 +20,8 @@ class ExtendPage extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(right: 150),
                 child: Text("Silahkan masukkan data diri anda",
-                    style: Theme.of(context).textTheme.displayLarge),
+                    style:
+                        Theme.of(context).textTheme.displayLarge!.copyWith()),
               ),
               SizedBox(
                 height: 100,
