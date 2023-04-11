@@ -12,7 +12,7 @@ final GoRouter routes = GoRouter(
       name: "home",
       path: "/",
       builder: (context, state) =>
-          const EnrollPage(), //! change it to homepage later
+          const DetailPage(id: "2"), //! change it to homepage later
       routes: [
         GoRoute(
           name: "membership",
@@ -34,7 +34,8 @@ final GoRouter routes = GoRouter(
             GoRoute(
               name: "detail",
               path: ":id",
-              builder: (context, state) => DetailPage(id: state.params["id"]!),
+              builder: (context, state) => DetailPage(
+                  id: state.params["id"]!), //! the param is string, fix it (?)
             )
           ],
         )
