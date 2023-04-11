@@ -1,15 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:gym/models/GymClass.dart';
 import 'package:gym/providers/gym_class_provider.dart';
 import 'package:gym/router.dart';
-import 'package:gym/screens/extend_membership_page/extend_page.dart';
-import 'package:gym/screens/homepage.dart';
-import 'package:gym/screens/summary_select_membership_page/member_summary_screen.dart';
 import 'package:provider/provider.dart';
-import 'screens/detail_page/detailpage.dart';
-import 'screens/enroll_page/enrollpage.dart';
 
 void main() {
   runApp(const MyApp());

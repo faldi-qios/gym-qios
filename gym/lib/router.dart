@@ -1,4 +1,6 @@
 import 'package:go_router/go_router.dart';
+import 'package:gym/screens/choose_payment/choose_payment.dart';
+import 'package:gym/screens/order_summary/order_summary.dart';
 
 import 'screens/detail_page/detailpage.dart';
 import 'screens/enroll_page/enrollpage.dart';
@@ -12,7 +14,7 @@ final GoRouter routes = GoRouter(
       name: "home",
       path: "/",
       builder: (context, state) =>
-          const DetailPage(id: "2"), //! change it to homepage later
+          const OrderSummary(), //! change it to homepage later
       routes: [
         GoRoute(
           name: "membership",
@@ -38,7 +40,18 @@ final GoRouter routes = GoRouter(
                   id: state.params["id"]!), //! the param is string, fix it (?)
             )
           ],
-        )
+        ),
+        GoRoute(
+            name: "orderSum",
+            path: "orderSum",
+            builder: (context, state) => const OrderSummary(),
+            routes: [
+              GoRoute(
+                name: "choosePayment",
+                path: "payment",
+                builder: (context, state) => ChoosePayment(),
+              )
+            ])
       ],
     ),
   ],

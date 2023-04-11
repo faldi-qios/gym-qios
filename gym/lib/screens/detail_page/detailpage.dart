@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:gym/providers/gym_class_provider.dart';
+import 'package:gym/widgets/bottom_pay_button.dart';
 import 'package:provider/provider.dart';
 
 import 'widgets/time_select.dart';
@@ -190,65 +191,7 @@ class DetailPage extends StatelessWidget {
             ),
           ),
           //! Bottom Checkout
-          Padding(
-            padding: const EdgeInsets.all(3.0),
-            child: Container(
-              padding: EdgeInsets.all(24),
-              decoration: BoxDecoration(
-                color: Theme.of(context).primaryColor,
-                // borderRadius: BorderRadius.circular(16),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const Text(
-                        'Total Price',
-                        style: TextStyle(color: Colors.white, fontSize: 16),
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      Text(
-                        "500",
-                        style: const TextStyle(
-                            color: Colors.white,
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold),
-                      )
-                    ],
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                        border: Border.all(
-                          color: Colors.white,
-                          width: 1,
-                        ),
-                        borderRadius: BorderRadius.circular(12)),
-                    padding: EdgeInsets.all(10),
-                    child: Row(
-                      children: const [
-                        Text(
-                          'Pay Now',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 18,
-                          ),
-                        ),
-                        Icon(
-                          Icons.arrow_forward_ios,
-                          size: 20,
-                          color: Colors.white,
-                        )
-                      ],
-                    ),
-                  )
-                ],
-              ),
-            ),
-          )
+          BottomPayButton(),
         ],
       ),
     );
