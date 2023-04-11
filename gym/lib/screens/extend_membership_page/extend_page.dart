@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../widgets/extend_form.dart';
+import 'widgets/extend_form.dart';
 
 class ExtendPage extends StatelessWidget {
   const ExtendPage({super.key});

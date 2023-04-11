@@ -3,12 +3,13 @@ import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:gym/models/GymClass.dart';
 import 'package:gym/providers/gym_class_provider.dart';
-import 'package:gym/screens/extend_page.dart';
+import 'package:gym/router.dart';
+import 'package:gym/screens/extend_membership_page/extend_page.dart';
 import 'package:gym/screens/homepage.dart';
-import 'package:gym/screens/member_summary_screen.dart';
+import 'package:gym/screens/summary_select_membership_page/member_summary_screen.dart';
 import 'package:provider/provider.dart';
-import 'screens/detailpage.dart';
-import 'screens/enrollpage.dart';
+import 'screens/detail_page/detailpage.dart';
+import 'screens/enroll_page/enrollpage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,44 +21,6 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    final GoRouter _router = GoRouter(
-      routes: [
-        GoRoute(
-          name: "home",
-          path: "/",
-          builder: (context, state) =>
-              const MemberSummaryScreen(), //change it to homepage later
-          routes: [
-            GoRoute(
-              name: "membership",
-              path: "membership",
-              builder: (context, state) => ExtendPage(),
-              routes: [
-                GoRoute(
-                    name: "summary",
-                    path: "summary",
-                    builder: (context, state) => MemberSummaryScreen())
-              ],
-            ),
-            GoRoute(
-              name: "class",
-              path: "class",
-              builder: (context, state) => EnrollPage(),
-              routes: [
-                GoRoute(
-                  name: "detail",
-                  path: ":id",
-                  builder: (context, state) => DetailPage(
-                      // id: int.parse(state.params["id"] as String),
-                      id: state.params["id"]!),
-                )
-              ],
-            )
-          ],
-        ),
-      ],
-    );
-
     return MultiProvider(
       providers: [
         ChangeNotifierProvider.value(
@@ -65,17 +28,17 @@ class MyApp extends StatelessWidget {
         ),
       ],
       child: MaterialApp.router(
-        routerConfig: _router,
+        routerConfig: routes,
         title: 'Qios Gym',
         theme: ThemeData(
           dividerColor: Colors.transparent,
           primaryColor: Color(0xFF1CAAC9),
           textTheme: TextTheme(
             displayLarge: GoogleFonts.dmSans(
-                fontSize: 48,
-                fontWeight: FontWeight.w700,
-                color: const Color(0XFF221F20),
-                sp),
+              fontSize: 48,
+              fontWeight: FontWeight.w700,
+              color: const Color(0XFF221F20),
+            ),
             displayMedium: GoogleFonts.dmSans(
               fontSize: 45,
               fontWeight: FontWeight.w700,

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:gym/widgets/subscription_select.dart';
-import 'package:gym/widgets/summary_info.dart';
+import 'package:gym/screens/summary_select_membership_page/widgets/subscription_select.dart';
+import 'package:gym/screens/summary_select_membership_page/widgets/summary_info.dart';
 
-class MemberSummaryScreen extends StatelessWidget {
-  const MemberSummaryScreen({super.key});
+class SelectMembership extends StatelessWidget {
+  const SelectMembership({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +30,7 @@ class MemberSummaryScreen extends StatelessWidget {
               //! The card for customer summary
               SummaryInfo(),
 
-              SizedBox(
+              const SizedBox(
                 height: 50,
               ),
 

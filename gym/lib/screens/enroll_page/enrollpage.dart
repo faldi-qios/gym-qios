@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:provider/provider.dart';
 import 'package:gym/models/GymClass.dart';
 import 'package:gym/providers/gym_class_provider.dart';
-import 'package:gym/widgets/categories_widget.dart';
-import 'package:provider/provider.dart';
+import 'package:gym/screens/enroll_page/widgets/categories_widget.dart';
 
-import '../widgets/class_tile.dart';
+import 'widgets/class_tile.dart';
 
 class EnrollPage extends StatefulWidget {
   const EnrollPage({super.key});
@@ -99,7 +99,7 @@ class _EnrollPageState extends State<EnrollPage> {
                             onPressed: () {
                               var id = value.classes[index].id;
 
-                              context.go("/class/$id");
+                              context.go("/enroll/$id");
                             });
                       },
                     );

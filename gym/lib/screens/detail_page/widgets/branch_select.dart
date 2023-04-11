@@ -1,13 +1,13 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-class DropDownMenu extends StatefulWidget {
-  const DropDownMenu({Key? key}) : super(key: key);
+class BranchSelect extends StatefulWidget {
+  const BranchSelect({Key? key}) : super(key: key);
   @override
-  State<DropDownMenu> createState() => _DropDownMenuState();
+  State<BranchSelect> createState() => _BranchSelectState();
 }
 
-class _DropDownMenuState extends State<DropDownMenu> {
+class _BranchSelectState extends State<BranchSelect> {
   String dropdownValue = 'Cabang Pondok Indah';
   @override
   Widget build(BuildContext context) {

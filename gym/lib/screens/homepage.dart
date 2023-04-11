@@ -39,7 +39,7 @@ class HomePage extends StatelessWidget {
               height: 40,
             ),
             ElevatedButton(
-              onPressed: () => context.go("/class"), //This go to enroll class
+              onPressed: () => context.go("/enroll"), //This go to enroll class
               style: ElevatedButton.styleFrom(
                 shape: const StadiumBorder(),
                 backgroundColor: Theme.of(context).primaryColor,

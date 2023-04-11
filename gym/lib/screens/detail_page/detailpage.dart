@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:gym/providers/gym_class_provider.dart';
-import 'package:gym/widgets/time_picker.dart';
 import 'package:provider/provider.dart';
 
-import '../widgets/date_picker.dart';
-import '../widgets/dropdown_menu.dart';
+import 'widgets/time_select.dart';
+import 'widgets/date_select.dart';
+import 'widgets/branch_select.dart';
 
 class DetailPage extends StatelessWidget {
   final String id;
@@ -139,7 +139,7 @@ class DetailPage extends StatelessWidget {
                           ),
                         ),
                         //? Dropdown Menu
-                        DropDownMenu(),
+                        BranchSelect(),
                       ],
                     ),
                     const SizedBox(height: 40),
@@ -156,7 +156,7 @@ class DetailPage extends StatelessWidget {
                           ),
                         ),
                         //? Pick a Date
-                        DatePick(),
+                        DateSelect(),
                       ],
                     ),
                     const SizedBox(height: 30),
@@ -173,11 +173,13 @@ class DetailPage extends StatelessWidget {
                           ),
                         ),
                         //? Pick Time
-                        TimePick(),
+                        TimeSelect(),
                       ],
                     ),
 
                     SizedBox(height: 30),
+
+                    //! Bottom Checkout
                     Padding(
                       padding: const EdgeInsets.all(3.0),
                       child: Container(
