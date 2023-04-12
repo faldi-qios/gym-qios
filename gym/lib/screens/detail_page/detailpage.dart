@@ -16,7 +16,13 @@ class DetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      appBar:
+
+          // const PreferredSize(
+          //     preferredSize: Size.fromHeight(150.0),
+          //     child: TitleWithBackButton(title: "Back to Home")),
+
+          AppBar(
         leading: const BackButton(
           color: Colors.black, // <-- SEE HERE
         ),

@@ -14,7 +14,7 @@ final GoRouter routes = GoRouter(
       name: "home",
       path: "/",
       builder: (context, state) =>
-          const OrderSummary(), //! change it to homepage later
+          const ChoosePayment(), //! change it to homepage later
       routes: [
         GoRoute(
           name: "membership",
