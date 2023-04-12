@@ -8,10 +8,10 @@ import 'widgets/time_select.dart';
 import 'widgets/date_select.dart';
 import 'widgets/branch_select.dart';
 
-class DetailPage extends StatelessWidget {
+class ClassDetail extends StatelessWidget {
   final String id;
 
-  const DetailPage({super.key, required this.id});
+  const ClassDetail({super.key, required this.id});
 
   @override
   Widget build(BuildContext context) {

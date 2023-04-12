@@ -3,18 +3,18 @@ import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import 'package:gym/models/GymClass.dart';
 import 'package:gym/providers/gym_class_provider.dart';
-import 'package:gym/screens/enroll_page/widgets/categories_widget.dart';
+import 'package:gym/screens/enroll_class/widgets/categories_widget.dart';
 
 import 'widgets/class_tile.dart';
 
-class EnrollPage extends StatefulWidget {
-  const EnrollPage({super.key});
+class EnrollClass extends StatefulWidget {
+  const EnrollClass({super.key});
 
   @override
-  State<EnrollPage> createState() => _EnrollPageState();
+  State<EnrollClass> createState() => _EnrollClassState();
 }
 
-class _EnrollPageState extends State<EnrollPage> {
+class _EnrollClassState extends State<EnrollClass> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -62,11 +62,14 @@ class _EnrollPageState extends State<EnrollPage> {
                   // SEARCH INPUT GOES HERE
                 },
               ),
+
+              CategoryWidget(),
               // Container(
               //   // height: 25,
               //   child: Consumer<GymClassProvider>(
               //     builder: (context, value, child) {
               //       return ListView.builder(
+              //         shrinkWrap: true,
               //         itemBuilder: (context, index) =>
               //             CategoriesWidget(value.categories[index]),
               //         itemCount: value.categories.length,

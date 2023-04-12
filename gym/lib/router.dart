@@ -2,11 +2,11 @@ import 'package:go_router/go_router.dart';
 import 'package:gym/screens/choose_payment/choose_payment.dart';
 import 'package:gym/screens/order_summary/order_summary.dart';
 
-import 'screens/detail_page/detailpage.dart';
-import 'screens/enroll_page/enrollpage.dart';
-import 'screens/extend_membership_page/extend_page.dart';
+import 'screens/class_detail/class_detail_page.dart';
+import 'screens/enroll_class/enroll_class.dart';
+import 'screens/input_data/input_data_page.dart';
 import 'screens/homepage.dart';
-import 'screens/summary_select_membership_page/member_summary_screen.dart';
+import 'screens/extend_membership/extend_membership_page.dart';
 
 final GoRouter routes = GoRouter(
   routes: [
@@ -14,12 +14,12 @@ final GoRouter routes = GoRouter(
       name: "home",
       path: "/",
       builder: (context, state) =>
-          const ChoosePayment(), //! change it to homepage later
+          const HomePage(), //! change it to homepage later
       routes: [
         GoRoute(
           name: "membership",
           path: "membership",
-          builder: (context, state) => const ExtendPage(),
+          builder: (context, state) => const InputData(),
           routes: [
             GoRoute(
               name: "summary",
@@ -31,12 +31,12 @@ final GoRouter routes = GoRouter(
         GoRoute(
           name: "enroll",
           path: "enroll",
-          builder: (context, state) => const EnrollPage(),
+          builder: (context, state) => const EnrollClass(),
           routes: [
             GoRoute(
               name: "detail",
               path: ":id",
-              builder: (context, state) => DetailPage(
+              builder: (context, state) => ClassDetail(
                   id: state.params["id"]!), //! the param is string, fix it (?)
             )
           ],

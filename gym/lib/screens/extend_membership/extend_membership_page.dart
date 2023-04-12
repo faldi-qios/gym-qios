@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:gym/screens/summary_select_membership_page/widgets/subscription_select.dart';
-import 'package:gym/screens/summary_select_membership_page/widgets/summary_info.dart';
+import 'package:gym/screens/extend_membership/widgets/subscription_select.dart';
+import 'package:gym/screens/extend_membership/widgets/summary_info.dart';
 
 class SelectMembership extends StatelessWidget {
   const SelectMembership({super.key});
