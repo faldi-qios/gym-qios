@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class BottomPayButton extends StatelessWidget {
   const BottomPayButton({super.key});
@@ -6,7 +7,7 @@ class BottomPayButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(24),
+      padding: const EdgeInsets.all(24),
       decoration: BoxDecoration(
         color: Theme.of(context).primaryColor,
         // borderRadius: BorderRadius.circular(16),
@@ -16,47 +17,52 @@ class BottomPayButton extends StatelessWidget {
         children: [
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Text(
+            children: const [
+              Text(
                 'Subtotal',
                 style: TextStyle(color: Colors.white, fontSize: 16),
               ),
-              const SizedBox(
+              SizedBox(
                 height: 10,
               ),
               Text(
                 "Rp. 200.000,000",
-                style: const TextStyle(
+                style: TextStyle(
                     color: Colors.white,
                     fontSize: 20,
                     fontWeight: FontWeight.bold),
               )
             ],
           ),
-          Container(
-            // decoration: BoxDecoration(
-            //     border: Border.all(
-            //       color: Colors.white,
-            //       width: 1,
-            //     ),
-            //     borderRadius: BorderRadius.circular(12)),
-            padding: EdgeInsets.all(10),
-            child: Row(
-              children: const [
-                Text(
-                  'Pay Now',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 34,
+          InkWell(
+            onTap: () {
+              context.go("/order-summary");
+            },
+            child: Container(
+              // decoration: BoxDecoration(
+              //     border: Border.all(
+              //       color: Colors.white,
+              //       width: 1,
+              //     ),
+              //     borderRadius: BorderRadius.circular(12)),
+              padding: const EdgeInsets.all(10),
+              child: Row(
+                children: const [
+                  Text(
+                    'Pay Now',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 34,
+                    ),
                   ),
-                ),
-                SizedBox(width: 5),
-                Icon(
-                  Icons.arrow_forward,
-                  size: 28,
-                  color: Colors.white,
-                )
-              ],
+                  SizedBox(width: 5),
+                  Icon(
+                    Icons.arrow_forward,
+                    size: 28,
+                    color: Colors.white,
+                  )
+                ],
+              ),
             ),
           )
         ],

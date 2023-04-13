@@ -102,7 +102,7 @@ class _EnrollClassState extends State<EnrollClass> {
                             onPressed: () {
                               var id = value.classes[index].id;
 
-                              context.go("/enroll/$id");
+                              context.go("/enroll-class/$id");
                             });
                       },
                     );

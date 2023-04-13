@@ -2,8 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:gym/screens/choose_payment/widgets/radio_button_pick_payment.dart';
-import 'package:gym/widgets/title_with_back_%20button.dart';
 
+import '../../widgets/custom_back_from_payment.dart';
 import '../../widgets/custom_stepper.dart';
 
 class ChoosePayment extends StatelessWidget {
@@ -162,7 +162,7 @@ class ChoosePayment extends StatelessWidget {
                           //     ),
                           //   );
                           // }
-                          context.go("/orderSum/payment"); //? Go To payment
+                          context.go("/payment"); //? Go To payment
                         }, //This go to membership payment
                         style: ElevatedButton.styleFrom(
                           shape: const StadiumBorder(),
