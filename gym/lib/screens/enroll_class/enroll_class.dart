@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
@@ -7,6 +9,8 @@ import 'package:gym/screens/enroll_class/widgets/categories_widget.dart';
 
 import 'widgets/class_tile.dart';
 
+import 'package:http/http.dart' as http;
+
 class EnrollClass extends StatefulWidget {
   const EnrollClass({super.key});
 
@@ -15,6 +19,23 @@ class EnrollClass extends StatefulWidget {
 }
 
 class _EnrollClassState extends State<EnrollClass> {
+  // void initState() {
+  //   super.initState();
+  //   _loadItems();
+  // }
+
+  // void _loadItems() async {
+  //   final url = Uri.https(
+  //     "gym-dummy-2ef46-default-rtdb.asia-southeast1.firebasedatabase.app",
+  //     "gym-class.json",
+  //   );
+
+  //   final response = await http.get(url);
+  //   //! DEBUGGING THE DATA
+  //   final listData = await json.decode(response.body);
+  //   print(listData.entries);
+  // }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,6 +51,7 @@ class _EnrollClassState extends State<EnrollClass> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
+                  //* TITLE
                   Text("Enroll Premium Class",
                       style: Theme.of(context).textTheme.displayLarge),
                   const Icon(
@@ -42,6 +64,7 @@ class _EnrollClassState extends State<EnrollClass> {
               const SizedBox(
                 height: 15,
               ),
+              //* SEARCH INPUT
               TextField(
                 decoration: InputDecoration(
                     hintText: 'Search',
@@ -82,6 +105,7 @@ class _EnrollClassState extends State<EnrollClass> {
                 height: 20,
               ),
               Expanded(
+                //* THE LIST / TILE OF GYM CLASSES
                 child: Consumer<GymClassProvider>(
                   builder: (context, value, child) {
                     return GridView.builder(

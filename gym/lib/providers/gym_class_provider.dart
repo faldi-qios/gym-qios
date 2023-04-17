@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:http/http.dart' as http;
 import '../models/GymClass.dart';
 
 class GymClassProvider extends ChangeNotifier {
