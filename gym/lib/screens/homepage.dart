@@ -19,8 +19,8 @@ class HomePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ElevatedButton(
-              onPressed: () =>
-                  context.go("/membership"), //This go to membership payment
+              onPressed: () => context
+                  .go("/extend-membership"), //This go to membership payment
               style: ElevatedButton.styleFrom(
                 shape: const StadiumBorder(),
                 backgroundColor: Theme.of(context).primaryColor,
@@ -39,7 +39,8 @@ class HomePage extends StatelessWidget {
               height: 40,
             ),
             ElevatedButton(
-              onPressed: () => context.go("/enroll"), //This go to enroll class
+              onPressed: () =>
+                  context.go("/enroll-class"), //This go to enroll class
               style: ElevatedButton.styleFrom(
                 shape: const StadiumBorder(),
                 backgroundColor: Theme.of(context).primaryColor,

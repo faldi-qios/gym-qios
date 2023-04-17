@@ -261,7 +261,7 @@ class ExtendForm extends StatelessWidget {
                       //     ),
                       //   );
                       // }
-                      context.go("/membership/summary");
+                      context.go("/extend-membership/select");
                     }, //This go to membership payment
                     style: ElevatedButton.styleFrom(
                       shape: const StadiumBorder(),
