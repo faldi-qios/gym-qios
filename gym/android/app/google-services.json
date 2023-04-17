@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "9438823803",
+    "firebase_url": "https://gym-dummy-2ef46-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "gym-dummy-2ef46",
+    "storage_bucket": "gym-dummy-2ef46.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:9438823803:android:c9328cb5aba0f7910e29de",
+        "android_client_info": {
+          "package_name": "com.example.gym"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "9438823803-1a9vvun9f4rrds149gco34brg8sc49rg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-r1RKJt0ByiGkWYPdwauS1B_cp4PYhLQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "9438823803-1a9vvun9f4rrds149gco34brg8sc49rg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

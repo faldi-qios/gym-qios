@@ -3,8 +3,17 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:gym/providers/gym_class_provider.dart';
 import 'package:gym/router.dart';
 import 'package:provider/provider.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
+// void main() {
+//   runApp(const MyApp());
+// }
+
+//! USING THE FIREBASE
+Future main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+
   runApp(const MyApp());
 }
 
