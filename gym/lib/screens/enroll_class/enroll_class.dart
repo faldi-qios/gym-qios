@@ -115,6 +115,7 @@ class _EnrollClassState extends State<EnrollClass> {
                         // childAspectRatio: 1,
                       ),
                       itemCount: value.classes.length,
+
                       // padding: const EdgeInsets.all(12),
                       itemBuilder: (context, index) {
                         return ClassTile(
@@ -126,7 +127,7 @@ class _EnrollClassState extends State<EnrollClass> {
                             onPressed: () {
                               var id = value.classes[index].id;
 
-                              context.go("/enroll/$id");
+                              context.go("/enroll-class/$id");
                             });
                       },
                     );

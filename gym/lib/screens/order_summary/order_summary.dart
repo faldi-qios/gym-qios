@@ -153,7 +153,7 @@ class OrderSummary extends StatelessWidget {
                           //     ),
                           //   );
                           // }
-                          context.go("/orderSum/payment"); //? Go To payment
+                          context.go("/payment"); //? Go To payment
                         }, //This go to membership payment
                         style: ElevatedButton.styleFrom(
                           shape: const StadiumBorder(),

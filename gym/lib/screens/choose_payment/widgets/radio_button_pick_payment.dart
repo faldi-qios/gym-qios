@@ -34,7 +34,7 @@ class _PickPaymentMenthodState extends State<PickPaymentMenthod> {
                 });
               },
             ),
-            shape: Border(
+            shape: const Border(
               top: BorderSide(),
               bottom: BorderSide(),
               left: BorderSide(),
@@ -52,7 +52,7 @@ class _PickPaymentMenthodState extends State<PickPaymentMenthod> {
                 });
               },
             ),
-            shape: Border(
+            shape: const Border(
               bottom: BorderSide(),
               left: BorderSide(),
               right: BorderSide(),
@@ -69,7 +69,7 @@ class _PickPaymentMenthodState extends State<PickPaymentMenthod> {
                 });
               },
             ),
-            shape: Border(
+            shape: const Border(
               bottom: BorderSide(),
               left: BorderSide(),
               right: BorderSide(),
@@ -86,7 +86,7 @@ class _PickPaymentMenthodState extends State<PickPaymentMenthod> {
                 });
               },
             ),
-            shape: Border(
+            shape: const Border(
               bottom: BorderSide(),
               left: BorderSide(),
               right: BorderSide(),

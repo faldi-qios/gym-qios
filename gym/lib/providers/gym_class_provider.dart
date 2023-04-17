@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:gym/repositories/network_repositories/category_network_repository.dart';
+import 'package:gym/repositories/network_repositories/gym_class_network_repository.dart';
+import 'package:gym/repositories/repository_interfaces/gym_class_repository.dart';
+
 import '../models/GymClass.dart';
+import '../models/Category.dart';
 
 class GymClassProvider extends ChangeNotifier {
+  // List<GymClassNetworkRepository>? _classes;
+
   final List<String> categories = [
     "All",
     "Zumba",
@@ -87,10 +94,11 @@ class GymClassProvider extends ChangeNotifier {
     ),
   ];
 
+  // Getter
   get classes => _classes;
 
   detailClass(id) =>
-      _classes.firstWhere((element) => element.id.toString() == id.toString());
+      classes?.firstWhere((element) => element.id.toString() == id.toString());
 }
 
 const dummyText =
