@@ -86,29 +86,35 @@ class _TimeSelectState extends State<TimeSelect> {
       padding: const EdgeInsets.symmetric(horizontal: 7),
       child: Card(
         elevation: 2,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(7),
+        ),
         child: InkWell(
           onTap: () {
             setState(() {
               selectedTime = index;
             });
           },
-          child: Container(
-            alignment: Alignment.center,
-            // height: 82,
-            // width: 162,
-            color: selectedTime == index
-                ? Theme.of(context).primaryColor
-                : Colors.white,
-            padding: const EdgeInsets.all(30),
-            child: Text(
-              time[index],
-              style: GoogleFonts.dmSans(
-                fontSize: 24,
-                fontWeight: FontWeight.w700,
-                letterSpacing: 0.17,
-                color: selectedTime == index
-                    ? Colors.white
-                    : const Color(0XFF221F20),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(7),
+            child: Container(
+              alignment: Alignment.center,
+              // height: 82,
+              // width: 162,
+              color: selectedTime == index
+                  ? Theme.of(context).primaryColor
+                  : Colors.white,
+              padding: const EdgeInsets.all(30),
+              child: Text(
+                time[index],
+                style: GoogleFonts.dmSans(
+                  fontSize: 24,
+                  fontWeight: FontWeight.w700,
+                  letterSpacing: 0.17,
+                  color: selectedTime == index
+                      ? Colors.white
+                      : const Color(0XFF221F20),
+                ),
               ),
             ),
           ),

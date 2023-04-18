@@ -1,88 +1,70 @@
-// import 'package:flutter/material.dart';
-// import 'package:gym/providers/gym_class_provider.dart';
-// import 'package:provider/provider.dart';
-
-// import '../../../models/category.dart';
-// import '../product_provider.dart';
-
-// class CategoryWidget extends StatelessWidget {
-//   const CategoryWidget({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     final textTheme = Theme.of(context).textTheme;
-//     final selectedCategory =
-//         context.select<>((value) => value.category);
-//     final categories = context.read<ProductProvider>().categories;
-
-//     return SizedBox(
-//       height: 75,
-//       child: Padding(
-//         padding: const EdgeInsets.symmetric(vertical: 16),
-//         child: ListView.builder(
-//           scrollDirection: Axis.horizontal,
-//           itemCount: categories?.length,
-//           itemBuilder: (context, index) {
-//             return Padding(
-//               padding: const EdgeInsets.only(right: 8),
-//               child: InputChip(
-//                 side: BorderSide(
-//                     color: selectedCategory == categories?[index]
-//                         ? Theme.of(context).primaryColor
-//                         : Colors.black26),
-//                 showCheckmark: false,
-//                 selectedColor: Theme.of(context).primaryColor,
-//                 backgroundColor: const Color(0xFFF1F1F1),
-//                 onPressed: () {
-//                   context.read<ProductProvider>().category = categories?[index];
-//                 },
-//                 selected: selectedCategory == categories?[index],
-//                 label: Text(
-//                   categories?[index].name ?? "",
-//                   style: textTheme.bodyMedium!.copyWith(
-//                     color: selectedCategory == categories?[index]
-//                         ? Colors.white
-//                         : Colors.black45,
-//                   ),
-//                 ),
-//               ),
-//             );
-//           },
-//         ),
-//       ),
-//     );
-//   }
-// }
-
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-class CategoryWidget extends StatelessWidget {
+class CategoryWidget extends StatefulWidget {
   const CategoryWidget({super.key});
 
   @override
+  State<CategoryWidget> createState() => _CategoryWidgetState();
+}
+
+class _CategoryWidgetState extends State<CategoryWidget> {
+  List<String> categories = [
+    "All",
+    "Zumba",
+    "Yoga",
+    "Pilates",
+  ];
+
+  int selectedCategory = 0;
+
+  @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 75,
-      child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 16),
+    return Padding(
+      padding: EdgeInsets.all(10),
+      child: SizedBox(
+        height: 50,
         child: ListView.builder(
           scrollDirection: Axis.horizontal,
-          itemCount: 5,
-          itemBuilder: (context, index) {
-            return Padding(
-              padding: const EdgeInsets.only(right: 8),
-              child: InputChip(
-                side: BorderSide(color: Theme.of(context).primaryColor),
-                showCheckmark: false,
-                selectedColor: Theme.of(context).primaryColor,
-                backgroundColor: const Color(0xFFF1F1F1),
-                onPressed: () {},
-                // selected: selectedCategory == categories?[index],
-                label: Text("Test"),
-              ),
-            );
+          itemCount: categories.length,
+          itemBuilder: (context, index) => buildCategories(index),
+        ),
+      ),
+    );
+  }
+
+  Widget buildCategories(int index) {
+    return SizedBox(
+      width: 150,
+      child: Card(
+        shape: const StadiumBorder(),
+        child: InkWell(
+          onTap: () {
+            setState(() {
+              selectedCategory = index;
+            });
           },
+          child: Container(
+            alignment: Alignment.center,
+            decoration: BoxDecoration(
+              color: selectedCategory == index
+                  ? Theme.of(context).primaryColor
+                  : Colors.white,
+              borderRadius: BorderRadius.circular(100),
+            ),
+            child: Text(
+              categories[index],
+              style: GoogleFonts.dmSans(
+                fontSize: 18,
+                fontWeight: FontWeight.w500,
+                color: selectedCategory == index
+                    ? Colors.white
+                    : const Color(0XFF221F20),
+              ),
+            ),
+          ),
         ),
       ),
     );

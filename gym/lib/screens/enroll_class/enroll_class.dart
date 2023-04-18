@@ -87,9 +87,6 @@ class _EnrollClassState extends State<EnrollClass> {
               //     },
               //   ),
               // ),
-              const SizedBox(
-                height: 20,
-              ),
               Expanded(
                 //* THE LIST / TILE OF GYM CLASSES
                 child:

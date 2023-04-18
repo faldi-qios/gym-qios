@@ -120,7 +120,9 @@ class _DateSelectState extends State<DateSelect> {
       padding: const EdgeInsets.symmetric(horizontal: 7),
       child: Card(
         elevation: 2,
-
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(7),
+        ),
         // width: 115,
         // height: 162,
         // decoration: BoxDecoration(
@@ -142,21 +144,25 @@ class _DateSelectState extends State<DateSelect> {
               selectedDate = index;
             });
           },
-          child: Container(
-            alignment: Alignment.center,
-            color: selectedDate == index
-                ? Theme.of(context).primaryColor
-                : Colors.white,
-            // height: 115,
-            // width: 162,
-            padding: EdgeInsets.all(30),
-            child: Text(
-              date[index],
-              style: GoogleFonts.dmSans(
-                fontSize: 24,
-                fontWeight: FontWeight.w700,
-                letterSpacing: 0.17,
-                color: selectedDate == index ? Colors.white : Color(0XFF221F20),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(7),
+            child: Container(
+              alignment: Alignment.center,
+              color: selectedDate == index
+                  ? Theme.of(context).primaryColor
+                  : Colors.white,
+              // height: 115,
+              // width: 162,
+              padding: EdgeInsets.all(30),
+              child: Text(
+                date[index],
+                style: GoogleFonts.dmSans(
+                  fontSize: 24,
+                  fontWeight: FontWeight.w700,
+                  letterSpacing: 0.17,
+                  color:
+                      selectedDate == index ? Colors.white : Color(0XFF221F20),
+                ),
               ),
             ),
           ),

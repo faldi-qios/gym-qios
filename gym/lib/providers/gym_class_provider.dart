@@ -25,7 +25,8 @@ class GymClassProvider extends ChangeNotifier {
       title: "Yoga With Bare Studio 1",
       image:
           "https://static.honestdocs.id/system/blog_articles/main_hero_images/000/003/926/original/iStock-846236570_%281%29.jpg",
-      description: dummyText,
+      description:
+          "Yoga class with Bare Studio. a local yoga studio with a certified coaches. This class duration is 2 hours",
       price: "Rp. 500.000,00",
       duration: 120,
     ),
