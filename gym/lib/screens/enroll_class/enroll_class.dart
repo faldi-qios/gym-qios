@@ -1,5 +1,8 @@
 import 'dart:convert';
+import 'dart:math';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
@@ -19,23 +22,6 @@ class EnrollClass extends StatefulWidget {
 }
 
 class _EnrollClassState extends State<EnrollClass> {
-  // void initState() {
-  //   super.initState();
-  //   _loadItems();
-  // }
-
-  // void _loadItems() async {
-  //   final url = Uri.https(
-  //     "gym-dummy-2ef46-default-rtdb.asia-southeast1.firebasedatabase.app",
-  //     "gym-class.json",
-  //   );
-
-  //   final response = await http.get(url);
-  //   //! DEBUGGING THE DATA
-  //   final listData = await json.decode(response.body);
-  //   print(listData.entries);
-  // }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -106,7 +92,10 @@ class _EnrollClassState extends State<EnrollClass> {
               ),
               Expanded(
                 //* THE LIST / TILE OF GYM CLASSES
-                child: Consumer<GymClassProvider>(
+                child:
+
+                    //! BELOW THE WAY BEFORE
+                    Consumer<GymClassProvider>(
                   builder: (context, value, child) {
                     return GridView.builder(
                       gridDelegate:

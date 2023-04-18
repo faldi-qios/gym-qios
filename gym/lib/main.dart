@@ -4,6 +4,7 @@ import 'package:gym/providers/gym_class_provider.dart';
 import 'package:gym/routes.dart';
 import 'package:provider/provider.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 // void main() {
 //   runApp(const MyApp());

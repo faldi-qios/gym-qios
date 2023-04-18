@@ -46,6 +46,7 @@ class ClassDetail extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: Column(
                       children: [
+                        //* Using clipRRect to add the border radius
                         ClipRRect(
                           borderRadius: BorderRadius.circular(23),
                           child: Image.network(
@@ -56,8 +57,6 @@ class ClassDetail extends StatelessWidget {
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            //? For the image
-
                             const SizedBox(height: 40),
                             //? For the title
                             Text(
@@ -157,7 +156,7 @@ class ClassDetail extends StatelessWidget {
                                     color: Color(0XFF221F20),
                                   ),
                                 ),
-                                //? Dropdown Menu
+                                //* Dropdown Menu
                                 BranchSelect(),
                               ],
                             ),
@@ -174,7 +173,7 @@ class ClassDetail extends StatelessWidget {
                                     color: Color(0XFF221F20),
                                   ),
                                 ),
-                                //? Pick a Date
+                                //* Pick a Date
                                 DateSelect(),
                               ],
                             ),
@@ -191,7 +190,7 @@ class ClassDetail extends StatelessWidget {
                                     color: Color(0XFF221F20),
                                   ),
                                 ),
-                                //? Pick Time
+                                //* Pick Time
                                 TimeSelect(),
                               ],
                             ),
