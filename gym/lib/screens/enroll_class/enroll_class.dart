@@ -72,7 +72,7 @@ class _EnrollClassState extends State<EnrollClass> {
                 },
               ),
 
-              CategoryWidget(),
+              const CategoryWidget(),
               // Container(
               //   // height: 25,
               //   child: Consumer<GymClassProvider>(

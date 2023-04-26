@@ -8,6 +8,23 @@ class TimeSelect extends StatefulWidget {
   State<TimeSelect> createState() => _TimeSelectState();
 }
 
+// @override
+// Future<List<Product>> get() async {
+//   try {
+//     final response = await http.get(Uri.parse("${Env.baseUrl}/product?clientId=${Env.clientId}"));
+//     final responseBody = jsonDecode(response.body);
+
+//     final List<Product> products = [];
+//     for (final data in responseBody["data"]) {
+//       products.add(Product.fromJson(data));
+//     }
+
+//     return products;
+//   } catch (e) {
+//     return Future.error(e);
+//   }
+// }
+
 class _TimeSelectState extends State<TimeSelect> {
   //* Placeholder data for time
   List<String> time = [
