@@ -3,7 +3,7 @@ import 'package:go_router/go_router.dart';
 
 class ClassTile extends StatelessWidget {
   final String title, image, description, price;
-  final double duration;
+  final int duration;
   void Function()? onPressed;
 
   ClassTile({
