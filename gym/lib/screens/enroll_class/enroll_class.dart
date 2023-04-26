@@ -2,7 +2,6 @@ import 'dart:convert';
 import 'dart:math';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
@@ -12,8 +11,6 @@ import 'package:gym/screens/enroll_class/widgets/categories_widget.dart';
 
 import 'widgets/class_tile.dart';
 
-import 'package:http/http.dart' as http;
-
 class EnrollClass extends StatefulWidget {
   const EnrollClass({super.key});
 
@@ -22,6 +19,10 @@ class EnrollClass extends StatefulWidget {
 }
 
 class _EnrollClassState extends State<EnrollClass> {
+  //! Testing the stream for the firestore
+  final Stream<QuerySnapshot> classes =
+      FirebaseFirestore.instance.collection('gym-classes').snapshots();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -89,29 +90,31 @@ class _EnrollClassState extends State<EnrollClass> {
               // ),
               Expanded(
                 //* THE LIST / TILE OF GYM CLASSES
-                child:
+                child: StreamBuilder<QuerySnapshot>(
+                  stream: classes,
+                  builder: (BuildContext context, AsyncSnapshot snapshot) {
+                    if (snapshot.hasError) {
+                      return Text("Something went wrong");
+                    }
+                    if (snapshot.connectionState == ConnectionState.waiting) {
+                      return Text("Loading");
+                    }
+                    final data = snapshot.requireData;
 
-                    //! BELOW THE WAY BEFORE
-                    Consumer<GymClassProvider>(
-                  builder: (context, value, child) {
                     return GridView.builder(
                       gridDelegate:
                           const SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 2,
-                        // childAspectRatio: 1,
-                      ),
-                      itemCount: value.classes.length,
-
-                      // padding: const EdgeInsets.all(12),
+                              crossAxisCount: 2),
+                      itemCount: data.size,
                       itemBuilder: (context, index) {
                         return ClassTile(
-                            title: value.classes[index].title,
-                            price: value.classes[index].price,
-                            image: value.classes[index].image,
-                            description: value.classes[index].description,
-                            duration: value.classes[index].duration,
+                            title: data.docs[index]["title"],
+                            price: data.docs[index]["price"],
+                            image: data.docs[index]["image"],
+                            description: data.docs[index]["description"],
+                            duration: data.docs[index]["duration"],
                             onPressed: () {
-                              var id = value.classes[index].id;
+                              var id = data.docs[index]["id"];
 
                               context.go("/enroll-class/$id");
                             });
@@ -119,6 +122,35 @@ class _EnrollClassState extends State<EnrollClass> {
                     );
                   },
                 ),
+
+                //     //! BELOW THE WAY BEFORE
+                //     Consumer<GymClassProvider>(
+                //   builder: (context, value, child) {
+                //     return GridView.builder(
+                //       gridDelegate:
+                //           const SliverGridDelegateWithFixedCrossAxisCount(
+                //         crossAxisCount: 2,
+                //         // childAspectRatio: 1,
+                //       ),
+                //       itemCount: value.classes.length,
+
+                //       // padding: const EdgeInsets.all(12),
+                //       itemBuilder: (context, index) {
+                //         return ClassTile(
+                //             title: value.classes[index].title,
+                //             price: value.classes[index].price,
+                //             image: value.classes[index].image,
+                //             description: value.classes[index].description,
+                //             duration: value.classes[index].duration,
+                //             onPressed: () {
+                //               var id = value.classes[index].id;
+
+                //               context.go("/enroll-class/$id");
+                //             });
+                //       },
+                //     );
+                //   },
+                // ),
               ),
             ],
           ),
